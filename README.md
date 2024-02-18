@@ -1,4 +1,4 @@
 # ERAv2
 ## Assignment 4
-### Session 5
+### Building the First Neural Networks
 *Basant Ray*
