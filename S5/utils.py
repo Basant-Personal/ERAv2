@@ -1,18 +1,6 @@
-import torch
-
-# CUDA?
-cuda = torch.cuda.is_available()
-print("CUDA Available?", cuda)
-
-import matplotlib.pyplot as plt
+# Get Correct Prediction
 
 from tqdm import tqdm
-
-#!pip install torchsummary
-from torchsummary import summary
-
-
-# Get Correct Prediction
 
 def GetCorrectPredCount(pPrediction, pLabels):
   return pPrediction.argmax(dim=1).eq(pLabels).sum().item()
@@ -73,7 +61,6 @@ def test(model, device, test_loader, criterion):
         100. * correct / len(test_loader.dataset)))
 
 #Plot Training Loss, Test Loss, Training Accuracy, Test Accuracy
-
 fig, axs = plt.subplots(2,2,figsize=(15,10))
 axs[0, 0].plot(train_losses)
 axs[0, 0].set_title("Training Loss")
